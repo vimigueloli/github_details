@@ -32,7 +32,7 @@ export default function User({ repo }: RepoProps) {
     // ? get user's data and repositories
     useEffect(() => {
         async function getUser() {
-            if (user === "" || user === null) {
+            if (user === null) {
                 router.push("/");
             } else if (user !== undefined) {
                 setLoading(true);
