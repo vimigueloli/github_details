@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import api from '../services/api';
 import Image from 'next/image'
 import {useRouter} from 'next/router'
+import {setCookie} from  'nookies'
 
 export default function Home() {
   const router = useRouter()
@@ -13,6 +14,7 @@ export default function Home() {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(false)
 
+  // ? zera os resultados da busca
   useEffect(() => {
     setSearched(false)
     setUsers([])
@@ -39,14 +41,15 @@ export default function Home() {
 
   // ? redirect to user's details
   async function selectUser(user){
+    setCookie(null, 'USER', user)
     router.push(`usuario/${user}`)
-  }
+  } 
 
 
   return (
-    <div className='line-center  h-screen'>
-      <div className=' w-96 relative bg-white rounded-3xl shadow-md'>
-        <div className='w-full h-16 line-center text-xl text-zinc-800 font-semibold'>
+    <div className='line-center  h-screen '>
+      <div className=' w-screen h-full mt-8 overflow-y-auto st:h-min st:w-96 relative bg-white st:rounded-3xl st:shadow-md'>
+        <div className='w-full mt-32 text-center px-4 st:px-0 st:mt-0 h-16 line-center text-xl text-zinc-800 font-semibold'>
           Pesquise um usuário do github
         </div>
         {
@@ -84,7 +87,7 @@ export default function Home() {
         }
         {
           // * users list
-          <div className='w-full mb-6 h-72 px-8 overflow-y-auto line-center mt-6 items-start flex-wrap gap-2 overflow-x-hidden'>
+          <div className='w-full mb-6 h-min st:h-72 px-8 overflow-y-auto line-center mt-6 items-start flex-wrap gap-2 overflow-x-hidden'>
             {
               users.map(user => (
                 <div key={user.id} className='w-11/12 line-left gap-x-4 border shadow-md h-12 hover:bg-zinc-300 cursor-pointer mt-2 text-xs rounded-xl px-8 with-transition'

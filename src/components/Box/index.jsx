@@ -15,7 +15,7 @@ export default function Box({title, children}){
                     >
                         <ArrowSmLeftIcon width={25} height={25} className='translate-x-[2px]'/>
                     </div>
-                    <div className='w-full -translate-x-6 line-center'>
+                    <div className='w-full text-center st:text-left st:-translate-x-6 line-center'>
                         <div>
                            {title}
                         </div>
