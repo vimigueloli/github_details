@@ -34,7 +34,7 @@ export default function User({ repo }: RepoProps) {
         async function getUser() {
             if (user === null) {
                 router.push("/");
-            } else if (user !== undefined) {
+            } else if (user !== undefined && user !== "") {
                 setLoading(true);
                 try {
                     const response = await api.get(
