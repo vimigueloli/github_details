@@ -9,7 +9,7 @@
 ![GitHub](https://img.shields.io/badge/dependências-react-4e8dec?style=plastic)
 ![GitHub](https://img.shields.io/badge/-axios-4e8dec?style=plastic)
 ![GitHub](https://img.shields.io/badge/heroicons-4e8dec?style=plastic)
-![GitHub](https://img.shields.io/badge/react_icons-redux-4e8dec?style=plastic)
+![GitHub](https://img.shields.io/badge/react_icons-4e8dec?style=plastic)
 <br/>
 
 #### O projedo depende de algumas bibliotecas e frameworks, então para o funcionamento dele é necessário instalar essas dependências com os seguintes comandos no shell do Windows:
